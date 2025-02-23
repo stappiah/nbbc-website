@@ -13,27 +13,39 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <div id="home">
-        <Banner />
-      </div>
-      <div id="about">
-        <AboutSection />
-        <InfoGrid />
-      </div>
-      <div id="watch">
-        <WatchSection />
-      </div>
-      <div id="ministries">
-        <MinistriesSection />
-      </div>
-      <div id="events">
-        <EventsSection />
-      </div>
-      <div id="give">
-        <GiveSection />
-      </div>
+      <main className="space-y-12 sm:space-y-24 pt-16">
+        <section id="home" aria-label="Home" className="relative">
+          <Banner />
+        </section>
+        <section id="about" aria-label="About Us" className="px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <AboutSection />
+            <InfoGrid />
+          </div>
+        </section>
+        <section id="watch" aria-label="Watch Services" className="px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <WatchSection />
+          </div>
+        </section>
+        <section id="ministries" aria-label="Our Ministries" className="px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <MinistriesSection />
+          </div>
+        </section>
+        <section id="events" aria-label="Upcoming Events" className="px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <EventsSection />
+          </div>
+        </section>
+        <section id="give" aria-label="Give" className="px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <GiveSection />
+          </div>
+        </section>
+      </main>
       <Footer />
       <BackToTop />
-    </div> 
+    </div>
   )
 }

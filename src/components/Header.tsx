@@ -1,4 +1,4 @@
-// Remove the React import since it's not directly used
+ 
 import { Link } from 'react-router-dom'
 import MobileNav from './MobileNav'
 import logoImage from '../assets/Logo.png'
@@ -6,10 +6,17 @@ import logoImage from '../assets/Logo.png'
 export default function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    element?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const navigationItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'watch', label: 'Watch' },
+    { id: 'ministries', label: 'Ministries' },
+    { id: 'events', label: 'Events' },
+    { id: 'give', label: 'Give' }
+  ]
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
@@ -20,24 +27,15 @@ export default function Header() {
           </Link>
           
           <nav className="hidden lg:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer">
-              Home
-            </button>
-            <button onClick={() => scrollToSection('about')} className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer">
-              About
-            </button>
-            <button onClick={() => scrollToSection('watch')} className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer">
-              Watch
-            </button>
-            <button onClick={() => scrollToSection('ministries')} className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer">
-              Ministries
-            </button>
-            <button onClick={() => scrollToSection('events')} className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer">
-              Events
-            </button>
-            <button onClick={() => scrollToSection('give')} className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer">
-              Give
-            </button>
+            {navigationItems.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="text-[#0D92F4] hover:text-[#FFB200] cursor-pointer"
+              >
+                {label}
+              </button>
+            ))}
           </nav>
 
           <MobileNav />
