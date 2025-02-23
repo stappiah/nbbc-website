@@ -1,9 +1,7 @@
-import React from 'react'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import InfoGrid from '../components/InfoGrid'
-import WorshipSection from '../components/WorshipSection'
 import BackToTop from '../components/BackToTop'
 import AboutSection from '../components/sections/AboutSection'
 import WatchSection from '../components/sections/WatchSection'
@@ -36,6 +34,6 @@ export default function Home() {
       </div>
       <Footer />
       <BackToTop />
-    </div>
+    </div> 
   )
 }

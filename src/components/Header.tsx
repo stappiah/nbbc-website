@@ -1,4 +1,4 @@
-import React from 'react'
+// Remove the React import since it's not directly used
 import { Link } from 'react-router-dom'
 import MobileNav from './MobileNav'
 import logoImage from '../assets/Logo.png'
