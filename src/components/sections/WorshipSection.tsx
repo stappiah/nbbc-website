@@ -1,0 +1,2 @@
+<h2 className="text-4xl font-bold text-[#0D92F4] mb-6">JOIN US IN WORSHIP</h2>
+        <button className="border-2 border-[#0D92F4] text-[#0D92F4] px-8 py-2 rounded-md hover:bg-[#0D92F4] hover:text-white transition-colors"></button>
