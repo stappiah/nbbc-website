@@ -1,4 +1,4 @@
-import Header from '../components/Header'
+import Header from '../components/common/Header'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import InfoGrid from '../components/InfoGrid'
@@ -11,7 +11,7 @@ import GiveSection from '../components/sections/GiveSection'
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="">
       <Header />
       <main className="space-y-12 sm:space-y-24 pt-16">
         <section id="home" aria-label="Home" className="relative">
@@ -24,7 +24,7 @@ export default function Home() {
           </div>
         </section>
         <section id="watch" aria-label="Watch Services" className="px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto sm:mt-3">
             <WatchSection />
           </div>
         </section>

@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const menuData = [
+    { name: "Home", to: "/" },
+    { name: "About", to: "/about" },
+    { name: "Ministries", to: "/" },
+    { name: "Give", to: "/" },
+    { name: "Events", to: "/" },
+  ];
+
+  let mainStyle = {
+    color: "#FFB200",
+  };
 
   return (
     <div className="lg:hidden">
@@ -32,7 +43,7 @@ export default function MobileNav() {
       {/* Mobile Menu */}
       <div
         className={`${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+          isOpen ? "translate-x-0" : "-translate-x-full"
         } fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50`}
       >
         <div className="p-4">
@@ -54,12 +65,17 @@ export default function MobileNav() {
             </svg>
           </button>
           <nav className="flex flex-col gap-4">
-            <Link to="/" className="text-[#0D92F4] hover:text-[#FFB200] font-medium">Home</Link>
-            <Link to="/about" className="text-[#0D92F4] hover:text-[#FFB200] font-medium">About</Link>
-            <Link to="/watch" className="text-[#0D92F4] hover:text-[#FFB200] font-medium">Watch</Link>
-            <Link to="/ministries" className="text-[#0D92F4] hover:text-[#FFB200] font-medium">Ministries</Link>
-            <Link to="/events" className="text-[#0D92F4] hover:text-[#FFB200] font-medium">Events</Link>
-            <Link to="/give" className="text-[#0D92F4] hover:text-[#FFB200] font-medium">Give</Link>
+
+            {menuData?.map((menu, index) => (
+              <NavLink
+                key={index}
+                style={({ isActive }) => (isActive ? mainStyle : {})}
+                to={menu?.to}
+                className="text-[#0D92F4] hover:text-[#FFB200] font-medium"
+              >
+                <p className="p-2">{menu?.name}</p>
+              </NavLink>
+            ))}
           </nav>
         </div>
       </div>
@@ -72,5 +88,5 @@ export default function MobileNav() {
         />
       )}
     </div>
-  )
+  );
 }
