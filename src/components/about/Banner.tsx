@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../common/Header";
 import banner from "../../assets/about.jpg";
 
