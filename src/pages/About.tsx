@@ -1,4 +1,3 @@
-import gathering from "../assets/gathering.jpg";
 import normal_image from "../assets/normal_image.jpg";
 import m1 from "../assets/m1.jpg";
 import m2 from "../assets/m2.jpg";
