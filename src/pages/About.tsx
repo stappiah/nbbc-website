@@ -3,51 +3,55 @@ import normal_image from "../assets/normal_image.jpg";
 import m1 from "../assets/m1.jpg";
 import m2 from "../assets/m2.jpg";
 import Banner from "../components/about/Banner";
-
+import { useState } from "react";
+import AboutUs from "../components/about/AboutUs";
+import Teach from "../components/about/Teach";
+import Pastor from "../components/about/Pastor";
+import Gallery from "../components/about/Gallery";
 
 const About = () => {
+  const aboutLinks = [
+    { name: "About Us", index: 0 },
+    { name: "What we teach", index: 1 },
+    { name: "Our Pastor", index: 2 },
+    { name: "Gallery", index: 3 },
+  ];
+
+  const [selectedIndex, setselectedIndex] = useState(0);
+  const [selectedName, setselectedName] = useState("About Us");
+
   return (
     <div>
-      <Banner />
-      <div className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg">
-        {/* Gathering Section */}
-        <div className="md:w-1/2">
-          <img
-            src={gathering} // Replace with actual image URL
-            alt="The Gathering Event"
-            className="w-full rounded-lg shadow-md"
-          />
-        </div>
+      <Banner name={selectedName} />
 
-        {/* Text Section */}
-        <div className="md:w-1/2 md:pl-8 mt-6 md:mt-0">
-          <h2 className="text-2xl font-bold text-gray-900">THE GATHERING</h2>
-          <p className="text-gray-700 mt-2">
-            At NBBC, we believe your best days are still out in front of you.
-            Whether you are joining us in person or online, we invite you to
-            experience our services and be a part of the Lakewood family. The
-            Bible says when you are planted in the house of the Lord, you will
-            flourish. Get ready to step into a new level of your destiny!
-          </p>
-          <p className="mt-4 text-purple-700 font-semibold flex items-center">
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8 7V3m8 4V3m-9 4h10M5 11h14m-2 8H7a2 2 0 01-2-2V9a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2z"
-              ></path>
-            </svg>
-            This Sunday, 1:00PM - 5:00PM
-          </p>
-        </div>
+      <div className="bg-[#0D92F4] pl-2 py-2 flex justify-center overflow-x-auto whitespace-nowrap">
+        {aboutLinks.map((item) => (
+          <button
+            key={item.index}
+            onClick={() => {
+              setselectedIndex(item?.index);
+              setselectedName(item?.name);
+            }}
+            className={
+              selectedIndex === item?.index
+                ? "bg-white text-[#0D92F4] font-semibold mr-3 cursor-pointer p-2 rounded-lg"
+                : "text-white p-2 font-semibold mr-3 cursor-pointer"
+            }
+          >
+            {item.name}
+          </button>
+        ))}
       </div>
+
+      {selectedIndex === 0 ? (
+        <AboutUs />
+      ) : selectedIndex === 1 ? (
+        <Teach />
+      ) : selectedIndex === 2 ? (
+        <Pastor />
+      ) : (
+        selectedIndex === 3 && <Gallery />
+      )}
 
       <div className="bg-blue-900 text-white flex flex-col md:flex-row items-center justify-between p-8 md:p-16">
         {/* Text Section */}

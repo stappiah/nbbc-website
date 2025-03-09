@@ -7,12 +7,12 @@ export default function EventsSection() {
         <h2 className="text-3xl sm:text-4xl font-bold text-[#0D92F4] text-center mb-8">
           Upcoming Events
         </h2>
-        <div className="grid md:grid-cols-2 gap-3 max-w-6xl mx-auto">
-          <div className="lg:h-[350px] lg:w-[300px]">
+        <div className="grid md:grid-cols-2 gap-2 max-w-6xl mx-auto">
+          <div className="lg:h-[350px] lg:w-[350px]">
             <img
               src={gathering}
               className="rounded-lg shadow-lg w-full h-full object-cover"
-              alt=""
+              alt="The Gathering"
             />
           </div>
           <div>

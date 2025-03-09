@@ -6,8 +6,8 @@ export default function MobileNav() {
   const menuData = [
     { name: "Home", to: "/" },
     { name: "About", to: "/about" },
-    { name: "Ministries", to: "/" },
-    { name: "Give", to: "/" },
+    { name: "Ministries", to: "/ministries" },
+    { name: "Give", to: "/give" },
     { name: "Events", to: "/" },
   ];
 
