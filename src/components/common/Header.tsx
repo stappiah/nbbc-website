@@ -9,7 +9,7 @@ export default function Header() {
     { name: "About", to: "/about" },
     { name: "Ministries", to: "/ministries" },
     { name: "Give", to: "/give" },
-    { name: "Events", to: "/" },
+    { name: "Sermons", to: "/sermons" },
   ];
 
   let mainStyle = {

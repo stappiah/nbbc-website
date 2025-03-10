@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const menuData = [
-    { name: "Home", to: "/" },
-    { name: "About", to: "/about" },
-    { name: "Ministries", to: "/ministries" },
-    { name: "Give", to: "/give" },
-    { name: "Events", to: "/" },
+	{ name: "Home", to: "/" },
+	{ name: "About", to: "/about" },
+	{ name: "Ministries", to: "/ministries" },
+	{ name: "Give", to: "/give" },
+	{ name: "Sermons", to: "/sermons" },
   ];
 
   let mainStyle = {

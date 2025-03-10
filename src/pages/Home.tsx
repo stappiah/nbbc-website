@@ -1,5 +1,4 @@
 import Header from '../components/common/Header'
-import Banner from '../components/Banner'
 import InfoGrid from '../components/InfoGrid'
 import BackToTop from '../components/BackToTop'
 import AboutSection from '../components/sections/AboutSection'
@@ -7,6 +6,7 @@ import WatchSection from '../components/sections/WatchSection'
 import MinistriesSection from '../components/sections/MinistriesSection'
 import EventsSection from '../components/sections/EventsSection'
 import GiveSection from '../components/sections/GiveSection'
+import Banner from '../components/Banner'
 
 export default function Home() {
   return (
